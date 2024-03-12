@@ -14,7 +14,7 @@ const getApi = async (limit = 50) => {
         const res = await fetch(pokemon.url);
         const data = await res.json();
         return data;
-    })
+    });
 
     const results = await Promise.all(promise);
     console.log(results);
@@ -25,28 +25,26 @@ const getApi = async (limit = 50) => {
         a.innerHTML = `
             <div class="cont-img"><img src="${results[i].sprites.front_default}" /></div>
            
-           <span class="order">${results[i].order}</span>
+           <p class="order">${results[i].order}</p>
 
-            <p>${results[i].name}</p>
+            <p class="name">${results[i].name}</p>
 
             <div class="cont-tipos">
-
-            <p class"tipospokemon">${results[i].types[0].type.name}</p>  
-
-            
-
+                <p class="tipospokemon">${results[i].types[0].type.name}</p>  
             </div>
-            `;
-            console.log(results[i].held_items);
-            if(results[i].held_items[0] !== undefined ){
+        `;
 
-               const p = document.createElement("p");
+        if (results[i].held_items[0] !== undefined) {
+            const itemName = results[i].held_items[0].item.name;
+            const truncatedName = itemName.length > 6 ? itemName.substring(0, 6) + "..." : itemName;
 
-               p.textContent=results[i].held_items[0].item.name;
-
-               a.appendChild(p);
-            }
+            const p = document.createElement("p");
+            p.className = "tipospokemon";
+            p.textContent = truncatedName;
             
+            const contTipos = a.querySelector('.cont-tipos');
+            contTipos.appendChild(p);
+        }
 
         contPokemons.appendChild(a);
     }
@@ -59,4 +57,5 @@ loading.classList.add("active");
 setTimeout(() => {
     getApi();
 }, 3000);
+
 
