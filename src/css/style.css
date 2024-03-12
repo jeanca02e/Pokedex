@@ -16,7 +16,7 @@ body{
 header{
    
     box-shadow: -2px 0px 5px rgba(66, 66, 66, 0.5);
-    height: 200px;
+    height: 250px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.116),rgba(0, 0, 0, 0.144)), url('../img/Background.png');
     background-position: unset;
     background-size: cover;
@@ -58,16 +58,28 @@ header div input{
 
 }
 /* creacion de los pokemons */
-section .cont-pokemons{
+
+.title{
+    margin: 40px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+section{
     width: 80%;
+    margin: auto;
+   
+}
+
+section .cont-pokemons{
+    width:100%;
     margin: 20px auto;
     display:grid;
-    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-columns: 19% 19% 19% 19% 19%;
     justify-content: space-between;
-    height: 700px;
+    
 }
 section .cont-pokemons .pokemons{
-    height: 400px;
+    height: 350px;
     background-color: white;
     margin-bottom: 20px;
     box-shadow: -2px 0px 5px rgba(205, 205, 205, 0.507);

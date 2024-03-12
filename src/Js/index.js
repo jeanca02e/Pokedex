@@ -1,5 +1,5 @@
 const contPokemons = document.getElementById("cont-pokemons");
-const offset = 0;
+const offset = 50;
 
 const getApi = async(limit=50)=>{
  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
