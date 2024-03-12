@@ -24,7 +24,28 @@ const getApi = async (limit = 50) => {
         a.className = "pokemons";
         a.innerHTML = `
             <div class="cont-img"><img src="${results[i].sprites.front_default}" /></div>
-            <p>${results[i].name}</p>`;
+           
+           <span class="order">${results[i].order}</span>
+
+            <p>${results[i].name}</p>
+
+            <div class="cont-tipos">
+
+            <p class"tipospokemon">${results[i].types[0].type.name}</p>  
+
+            
+
+            </div>
+            `;
+            if(results[i].held_items[0].item.name !==undefined ){
+
+               const p = document.createElement("p");
+
+               p.textContent=results[i].held_items[0].item.name;
+
+               a.appendChild(p);
+            }
+            
 
         contPokemons.appendChild(a);
     }
@@ -32,9 +53,9 @@ const getApi = async (limit = 50) => {
     loading.classList.remove("active");
 }
 
-// Mostrar loading y luego llamar a la función getApi después de 5 segundos
+// Mostrar loading y luego llamar a la función getApi después de 3 segundos
 loading.classList.add("active");
 setTimeout(() => {
     getApi();
-}, 5000);
+}, 3000);
 
