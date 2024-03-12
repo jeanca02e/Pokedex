@@ -25,26 +25,25 @@ const getApi = async (limit = 50) => {
         a.innerHTML = `
             <div class="cont-img"><img src="${results[i].sprites.front_default}" /></div>
            
-           <span class="order">${results[i].order}</span>
+           <p class="order">${results[i].order}</p>
 
-            <p>${results[i].name}</p>
+            <p class="name">${results[i].name}</p>
 
             <div class="cont-tipos">
 
-            <p class"tipospokemon">${results[i].types[0].type.name}</p>  
+            <p class="tipospokemon">${results[i].types[0].type.name}</p>  
 
             
 
             </div>
             `;
-            if(results[i].held_items[0].item.name !==undefined ){
-
+            if (results[i].held_items[0] !== undefined) {
                const p = document.createElement("p");
-
-               p.textContent=results[i].held_items[0].item.name;
-
-               a.appendChild(p);
-            }
+               p.className="tipospokemon"
+               p.textContent = results[i].held_items[0].item.name;
+               const contTipos = a.querySelector('.cont-tipos');
+               contTipos.appendChild(p);
+           }
             
 
         contPokemons.appendChild(a);
