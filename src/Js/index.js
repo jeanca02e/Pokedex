@@ -37,7 +37,8 @@ const getApi = async (limit = 50) => {
 
             </div>
             `;
-            if(results[i].held_items[0].item.name !==undefined ){
+            console.log(results[i].held_items);
+            if(results[i].held_items[0] !== undefined ){
 
                const p = document.createElement("p");
 
