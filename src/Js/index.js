@@ -2,16 +2,11 @@ const contPokemons = document.getElementById("cont-pokemons");
 const loading = document.getElementById("loading");
 const search = document.getElementById("search");
 const title= document.getElementById("title");
-const cargar = document.getElementById("cargar");
-const offset = 0;
-
-const getApi = async (limit = 50) => {
-
-cargar.innerHTML='';
+const button = document.getElementById("btn"); 
+let offset = 0;
 
 
-
-
+const getApi = async (limit = 50, offset) => {
     loading.classList.add("active");
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
@@ -29,9 +24,9 @@ console.log(data.results.length)
     });
 
     const results = await Promise.all(promise);
-    contPokemons.innerHTML = '';
+    
     const searchFilter = results.filter(result =>  result.name.includes(search.value) || result.order.toString().includes(search.value) || result.types[0].type.name.includes(search.value));
-    console.log("es ",searchFilter);
+    
     title.innerHTML=`Resultados encontrados ${searchFilter.length}`;
     searchFilter.map(result =>{
         const a = document.createElement("div");
@@ -69,15 +64,23 @@ console.log(data.results.length)
     loading.classList.remove("active");
 }
 
-search.addEventListener('input', () => {
+search.addEventListener('keyup', () => {
     contPokemons.innerHTML = ''; // Limpiar el contenido actual de contPokemons
-    getApi(); // Llamar a la función getApi para actualizar la búsqueda
+    getApi(1000); // Llamar a la función getApi para actualizar la búsqueda
+});
+
+// esta es la parte de cargar mas
+button.addEventListener("click",()=>{
+     offset = offset + 50;
+    // alert(offset + 50);
+    getApi(50, offset);
 });
 
 // Mostrar loading y luego llamar a la función getApi después de 3 segundos
 loading.classList.add("active");
- setTimeout(() => {
- getApi();
+setTimeout(() => {
+    contPokemons.innerHTML = '';
+    getApi();
 }, 3000);
 
 
