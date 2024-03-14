@@ -24,12 +24,7 @@ const getApi = async (limit = 50, offset) => {
     
     const searchFilter = results.filter(result =>  result.name.includes(search.value) || result.order.toString().includes(search.value) || result.types[0].type.name.includes(search.value));
     
-    if(offset > 0){
-        title.innerHTML=`Resultados encontrados ${offset + 50}`;
-    }else{
-
-        title.innerHTML=`Resultados encontrados ${searchFilter.length}`;
-    }
+    title.innerHTML=`Resultados encontrados ${searchFilter.length}`;
     searchFilter.map(result =>{
         const a = document.createElement("div");
         a.className = "pokemons";
@@ -71,13 +66,13 @@ search.addEventListener('keyup', () => {
     getApi(1000); // Llamar a la función getApi para actualizar la búsqueda
 });
 
-// esta es la parte de cargar mas
-button.addEventListener("click",()=>{
-     offset = offset + 50;
-    // alert(offset + 50);
+// // esta es la parte de cargar mas
+// button.addEventListener("click",()=>{
+//      offset = offset + 50;
+//     // alert(offset + 50);
     
-    getApi(50, offset);
-});
+//     getApi(50, offset);
+// });
 
 // Mostrar loading y luego llamar a la función getApi después de 3 segundos
 loading.classList.add("active");
