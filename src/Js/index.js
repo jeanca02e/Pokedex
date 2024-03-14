@@ -2,13 +2,23 @@ const contPokemons = document.getElementById("cont-pokemons");
 const loading = document.getElementById("loading");
 const search = document.getElementById("search");
 const title= document.getElementById("title");
+const cargar = document.getElementById("cargar");
 const offset = 0;
 
 const getApi = async (limit = 50) => {
+
+cargar.innerHTML='';
+
+
+
+
     loading.classList.add("active");
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
     const data = await response.json();
+
+console.log(data.results.length)
+
 
     console.log(data);
 
@@ -66,8 +76,8 @@ search.addEventListener('input', () => {
 
 // Mostrar loading y luego llamar a la función getApi después de 3 segundos
 loading.classList.add("active");
-setTimeout(() => {
-    getApi();
+ setTimeout(() => {
+ getApi();
 }, 3000);
 
 
