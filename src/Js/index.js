@@ -71,6 +71,7 @@ button.addEventListener("click",()=>{
      offset = offset + 50;
     // alert(offset + 50);
     getApi(50, offset);
+    title.innerHTML=`Resultados encontrados ${10}`;
 });
 
 // Mostrar loading y luego llamar a la función getApi después de 3 segundos
