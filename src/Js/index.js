@@ -3,6 +3,7 @@ const loading = document.getElementById("loading");
 const search = document.getElementById("search");
 const title= document.getElementById("title");
 const button = document.getElementById("btn"); 
+const cargar = document.getElementById("cargar");
 let offset = 0;
 
 
@@ -11,6 +12,9 @@ const getApi = async (limit = 50, offset) => {
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
     const data = await response.json();
+
+console.log(data.results.length)
+
 
     console.log(data);
 
@@ -24,8 +28,26 @@ const getApi = async (limit = 50, offset) => {
     
     const searchFilter = results.filter(result =>  result.name.includes(search.value) || result.order.toString().includes(search.value) || result.types[0].type.name.includes(search.value));
     
+     // if(result.length < 1){
+        //   alert();
+        // }
+
+       if(searchFilter.length < 1){
+         cargar.style.display = "flex";
+         btn.style.display = "none";
+         title.style.display = "none";
+         
+       }else{
+        cargar.style.display = "none";
+        //  btn.style.display = "none";
+         title.style.display = "block";
+
+       }
+
     title.innerHTML=`Resultados encontrados ${searchFilter.length}`;
     searchFilter.map(result =>{
+     
+
         const a = document.createElement("div");
         a.className = "pokemons";
         a.innerHTML = `
@@ -66,21 +88,16 @@ search.addEventListener('keyup', () => {
     getApi(1000); // Llamar a la función getApi para actualizar la búsqueda
 });
 
-// // esta es la parte de cargar mas
-// button.addEventListener("click",()=>{
-//      offset = offset + 50;
-//     // alert(offset + 50);
-    
-//     getApi(50, offset);
-// });
+// esta es la parte de cargar mas
+button.addEventListener("click",()=>{
+     offset = offset + 50;
+    // alert(offset + 50);
+    getApi(50, offset);
+});
 
 // Mostrar loading y luego llamar a la función getApi después de 3 segundos
 loading.classList.add("active");
 setTimeout(() => {
     contPokemons.innerHTML = '';
     getApi();
-}, 3000);
-
-
-
-
+}, 1600);
