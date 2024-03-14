@@ -162,3 +162,32 @@ section .cont-pokemons .pokemons .tipospokemon{
    text-transform: capitalize;
 }
 
+/*boton Cargar mas*/
+
+.cont-button{
+    margin: auto;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    
+}
+
+.cont-button button{
+    width: 100%;
+    font-weight: bold;
+    color: aliceblue;
+    height: 35px;
+    border-radius: 20px;
+    border-style: unset;
+    background-color: #4285F4;
+    cursor: pointer;
+    transition: all ease-in-out 1s;
+    
+}
+
+.cont-button button:hover{
+ background-color: #004ac0;
+}
+
+
