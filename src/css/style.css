@@ -43,12 +43,13 @@ height: 40px;
 header .cont-search {
     display: flex;
     align-items: center;
-    border: 2px solid #ccc;
+    border: 2px solid #ccccccdf;
     border-radius: 50px;
     padding: 5px;
     background-color: #f8f8f8e2;
     width: 25%;
-    box-shadow: 4px 3px 2px rgba(66, 66, 66, 0.5);
+   
+    transition: all ease-in 1s;
 }
 
 header .cont-search input[type="search"] {
@@ -58,6 +59,7 @@ header .cont-search input[type="search"] {
     padding: 5px;
     font-size: 16px;
     background: transparent;
+   
 }
 
 header .cont-search input[type="search"]::placeholder {
@@ -70,7 +72,8 @@ header .cont-search i {
     padding: 10px;
     border-radius: 100%;
     background: #DB4437;
-    box-shadow: 4px 3px 5px rgba(66, 66, 66, 0.5);
+    
+    transition: all ease-in 1s;
     
 }
 /* creacion de los pokemons */

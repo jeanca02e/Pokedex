@@ -4,6 +4,8 @@ const search = document.getElementById("search");
 const title= document.getElementById("title");
 const button = document.getElementById("btn"); 
 const cargar = document.getElementById("cargar");
+const icon = document.getElementById("icon");
+const contSearch = document.getElementById("cont-search");
 let offset = 0;
 
 
@@ -101,3 +103,18 @@ setTimeout(() => {
     contPokemons.innerHTML = '';
     getApi();
 }, 1600);
+
+
+
+search.addEventListener("focus",()=>{
+contSearch.style.background = "#fff"
+contSearch.style.boxShadow = "4px 3px 2px rgba(66, 66, 66, 0.5)"
+icon.style.background = "#4285F4";
+icon.style.boxShadow = "4px 3px 2px rgba(66, 66, 66, 0.5)"
+
+});
+
+search.addEventListener("blur",()=>{
+    contSearch.style.background = "#red"
+    
+    });
