@@ -3,6 +3,7 @@ const loading = document.getElementById("loading");
 const search = document.getElementById("search");
 const title= document.getElementById("title");
 const button = document.getElementById("btn"); 
+const cargar = document.getElementById("cargar");
 let offset = 0;
 
 
@@ -27,8 +28,21 @@ console.log(data.results.length)
     
     const searchFilter = results.filter(result =>  result.name.includes(search.value) || result.order.toString().includes(search.value) || result.types[0].type.name.includes(search.value));
     
+     // if(result.length < 1){
+        //   alert();
+        // }
+
+       if(searchFilter.length < 1){
+         cargar.style.display = "flex";
+         btn.style.display = "none";
+         title.style.display = "none";
+         
+       }
+
     title.innerHTML=`Resultados encontrados ${searchFilter.length}`;
     searchFilter.map(result =>{
+     
+
         const a = document.createElement("div");
         a.className = "pokemons";
         a.innerHTML = `
@@ -81,8 +95,4 @@ loading.classList.add("active");
 setTimeout(() => {
     contPokemons.innerHTML = '';
     getApi();
-}, 3000);
-
-
-
-
+}, 1600);
