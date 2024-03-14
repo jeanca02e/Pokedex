@@ -12,9 +12,6 @@ const getApi = async (limit = 50, offset) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
     const data = await response.json();
 
-console.log(data.results.length)
-
-
     console.log(data);
 
     const promise = data.results.map(async (pokemon) => {
@@ -27,7 +24,12 @@ console.log(data.results.length)
     
     const searchFilter = results.filter(result =>  result.name.includes(search.value) || result.order.toString().includes(search.value) || result.types[0].type.name.includes(search.value));
     
-    title.innerHTML=`Resultados encontrados ${searchFilter.length}`;
+    if(offset > 0){
+        title.innerHTML=`Resultados encontrados ${offset + 50}`;
+    }else{
+
+        title.innerHTML=`Resultados encontrados ${searchFilter.length}`;
+    }
     searchFilter.map(result =>{
         const a = document.createElement("div");
         a.className = "pokemons";
@@ -73,8 +75,8 @@ search.addEventListener('keyup', () => {
 button.addEventListener("click",()=>{
      offset = offset + 50;
     // alert(offset + 50);
+    
     getApi(50, offset);
-    title.innerHTML=`Resultados encontrados ${10}`;
 });
 
 // Mostrar loading y luego llamar a la función getApi después de 3 segundos
