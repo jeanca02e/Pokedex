@@ -12,6 +12,9 @@ const getApi = async (limit = 50, offset) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
     const data = await response.json();
 
+console.log(data.results.length)
+
+
     console.log(data);
 
     const promise = data.results.map(async (pokemon) => {
