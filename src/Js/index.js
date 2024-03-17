@@ -56,7 +56,7 @@ console.log(data.results.length)
         a.className = "pokemons";
         a.innerHTML =
           `
-          <a href="index.html?id=${result.id}">
+          <a href="resultados.html?id=${result.id}">
             <div class="cont-img"><img src="${result.sprites.front_default}" /></div>
            
            <p class="order">${result.id}</p>
@@ -126,3 +126,5 @@ search.addEventListener("blur",()=>{
     contSearch.style.background = "#red"
     
     });
+
+

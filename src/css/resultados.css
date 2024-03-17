@@ -16,7 +16,7 @@ body{
 
 .cont-resultados{
 
-    height: 800px;
+    
     width: 60%;
     margin: 80px auto;
     color: #fff;
@@ -44,7 +44,7 @@ body{
 
 .cont-tipo-imagen .cont-tipo .name{
   
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bold;
     text-shadow: 2px 4px 4px  rgb(40, 37, 37);
     
@@ -52,34 +52,64 @@ body{
 
 
 .cont-tipo-imagen img{
-
-    width: 400px;
-    
+    height: 350px;
+    width: 350px;
+    background-color: #1788552d;
+    border-radius: 100%;
+    box-shadow: -2px 0px 5px rgba(45, 123, 61, 0.507);
+    border: 1px solid rgb(71, 67, 67);
 }
 
 .pokemon-stats {
     margin-top: 20px;
+    
 }
 
 .stat {
-    margin-bottom: 10px;
+     
+    
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
 }
 
 .stat-name {
     font-weight: bold;
+    margin-bottom: 5px;
+    width: 200px;
+    font-size: 25px;
+    text-shadow: 2px 4px 4px  rgb(40, 37, 37);
 }
 
 .stat-bar {
-    background-color: #ddd;
-    height: 20px;
-    border-radius: 5px;
+    
+    padding:5px;
+    height: 50px;
+    width: 850px;
+    border-radius: 50px;
     overflow: hidden;
+    
+    
+    
 }
 
 .stat-progress {
     height: 100%;
-    background-color: #2f2da1;
-    color: white;
+    background-color: #fff;
+    color: rgb(184, 13, 13);
     text-align: center;
     line-height: 20px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 3px rgb(42, 44, 42);
+}
+
+.pokemon-stats p{
+    
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 2px 4px 4px  rgb(40, 37, 37);
+
 }
