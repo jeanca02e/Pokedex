@@ -30,6 +30,7 @@ console.log(data.results.length)
     
     const searchFilter = results.filter(result =>  result.name.includes(search.value) || result.order.toString().includes(search.value) || result.types[0].type.name.includes(search.value));
     
+    console.log(searchFilter);
      // if(result.length < 1){
         //   alert();
         // }

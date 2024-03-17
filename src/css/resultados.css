@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;  
+    
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    background: linear-gradient(#72ec9e, #149742);
+}
+
+.cont-resultados{
+
+    height: 800px;
+    width: 60%;
+    margin: 80px auto;
+    color: #fff;
+    background-color: #1788552d;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #57b175;
+    box-shadow: -2px 0px 5px rgba(45, 123, 61, 0.507);
+}
+
+.cont-tipo-imagen{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.cont-tipo-imagen .cont-tipo .tipo{
+  
+    font-size: 25px;
+    text-shadow: 4px 4px 4px  rgb(40, 37, 37);
+    
+}
+
+.cont-tipo-imagen .cont-tipo .name{
+  
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 4px 4px  rgb(40, 37, 37);
+    
+}
+
+
+.cont-tipo-imagen img{
+
+    width: 400px;
+    
+}
+
+.pokemon-stats {
+    margin-top: 20px;
+}
+
+.stat {
+    margin-bottom: 10px;
+}
+
+.stat-name {
+    font-weight: bold;
+}
+
+.stat-bar {
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.stat-progress {
+    height: 100%;
+    background-color: #2f2da1;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}
