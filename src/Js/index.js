@@ -6,6 +6,7 @@ const button = document.getElementById("btn");
 const cargar = document.getElementById("cargar");
 const icon = document.getElementById("icon");
 const contSearch = document.getElementById("cont-search");
+const contpanel = document.getElementById("cont_panel")
 let offset = 0;
 
 
@@ -52,16 +53,20 @@ console.log(data.results.length)
 
         const a = document.createElement("div");
         a.className = "pokemons";
-        a.innerHTML = `
+        a.innerHTML =
+          `
+          <a href="index.html?id=${result.id}">
             <div class="cont-img"><img src="${result.sprites.front_default}" /></div>
            
-           <p class="order">${result.order}</p>
+           <p class="order">${result.id}</p>
 
             <p class="name">${result.name}</p>
 
             <div class="cont-tipos">
                 <p class="tipospokemon">${result.types[0].type.name}</p>  
-            </div>
+            </div> 
+            </a>
+
         `;
 
         if (result.held_items[0] !== undefined) {
@@ -87,7 +92,7 @@ console.log(data.results.length)
 
 search.addEventListener('keyup', () => {
     contPokemons.innerHTML = ''; // Limpiar el contenido actual de contPokemons
-    getApi(1000); // Llamar a la función getApi para actualizar la búsqueda
+    getApi(50); // Llamar a la función getApi para actualizar la búsqueda
 });
 
 // esta es la parte de cargar mas
@@ -111,6 +116,8 @@ contSearch.style.background = "#fff"
 contSearch.style.boxShadow = "4px 3px 2px rgba(66, 66, 66, 0.5)"
 icon.style.background = "#4285F4";
 icon.style.boxShadow = "4px 3px 2px rgba(66, 66, 66, 0.5)"
+
+contSearch.style.width = "250px"
 
 });
 
