@@ -14,6 +14,34 @@ body{
 
 }
 
+
+.cont_panel {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(235, 234, 234, 0.738); /* Color blanco con una ligera opacidad */
+    padding: 20px; /* Añade espacio alrededor del contenido del panel */
+    display: none;
+  }
+  
+  .panel {
+background-color: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 5px 5px 4px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+}
+  
+  h1 {
+    /* Estilos adicionales para el encabezado, si los necesitas */
+  }
+  
+
+
 header{
    
     box-shadow: -2px 0px 5px rgba(66, 66, 66, 0.5);
@@ -47,7 +75,7 @@ header .cont-search {
     border-radius: 50px;
     padding: 5px;
     background-color: #f8f8f8e2;
-    width: 25%;
+    width: 190px;
    
     transition: all ease-in 1s;
 }
