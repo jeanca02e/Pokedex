@@ -39,6 +39,7 @@ body{
   
     font-size: 25px;
     text-shadow: 4px 4px 4px  rgb(40, 37, 37);
+    text-transform: capitalize;
     
 }
 
@@ -47,7 +48,7 @@ body{
     font-size: 70px;
     font-weight: bold;
     text-shadow: 2px 4px 4px  rgb(40, 37, 37);
-    
+    text-transform: capitalize;
 }
 
 

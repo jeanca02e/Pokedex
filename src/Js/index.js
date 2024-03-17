@@ -6,7 +6,7 @@ const button = document.getElementById("btn");
 const cargar = document.getElementById("cargar");
 const icon = document.getElementById("icon");
 const contSearch = document.getElementById("cont-search");
-const contpanel = document.getElementById("cont_panel")
+const contpanel = document.getElementById("cont_panel");
 let offset = 0;
 
 

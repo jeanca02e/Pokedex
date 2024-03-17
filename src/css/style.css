@@ -14,7 +14,10 @@ body{
 
 }
 
-
+a{
+    text-decoration: none;
+    color: black;
+}
 .cont_panel {
     position: absolute;
     top: 0%;
@@ -23,8 +26,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(235, 234, 234, 0.738); /* Color blanco con una ligera opacidad */
-    padding: 20px; /* Añade espacio alrededor del contenido del panel */
+    background-color: rgba(235, 234, 234, 0.738); 
+    padding: 20px;
     display: none;
   }
   
@@ -32,13 +35,11 @@ body{
 background-color: white;
 padding: 20px;
 border-radius: 10px;
-box-shadow: 5px 5px 4px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+box-shadow: 5px 5px 4px 4px rgba(0, 0, 0, 0.1); 
 
 }
   
-  h1 {
-    /* Estilos adicionales para el encabezado, si los necesitas */
-  }
+  
   
 
 
@@ -104,7 +105,7 @@ header .cont-search i {
     transition: all ease-in 1s;
     
 }
-/* creacion de los pokemons */
+
 
 .loader {
 	margin: 20px auto;
@@ -134,9 +135,10 @@ header .cont-search i {
 section{
     width: 85%;
     margin: auto;
-    
+        
    
 }
+
 
 section .cont-pokemons{
     width:100%;
@@ -179,6 +181,8 @@ section .cont-pokemons .pokemons .name{
     font-size: 20px;
     text-align: center;
     text-transform:capitalize;
+    text-decoration: none;
+    
 
 }
 
@@ -236,7 +240,7 @@ section .cont-pokemons .pokemons .tipospokemon{
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    margin-top: 20px; 
     display: none;
 }
 
